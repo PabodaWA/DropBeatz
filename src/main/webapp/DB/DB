@@ -1,0 +1,72 @@
+     Conection Name - DropBeatz
+     Username       - DropBeatz
+     Password       - DropBeatZ123#
+     DB             - dropbeatz
+
+
+CREATE TABLE `admin` (
+  `Admin_id` int NOT NULL AUTO_INCREMENT,
+  `Ad_first_name` varchar(45) NOT NULL,
+  `Ad_last_name` varchar(45) NOT NULL,
+  `Ad_Address` varchar(100) DEFAULT NULL,
+  `Ad_phone_no` varchar(45) NOT NULL,
+  `Ad_email` varchar(45) NOT NULL,
+  `Ad_password` varchar(45) NOT NULL,
+  PRIMARY KEY (`Admin_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `artist` (
+  `artist_id` int NOT NULL AUTO_INCREMENT,
+  `artist_first_name` varchar(45) NOT NULL,
+  `artist_last_name` varchar(45) NOT NULL,
+  `artist_address` varchar(100) DEFAULT NULL,
+  `artist_phone_No` varchar(45) NOT NULL,
+  `artist_email` varchar(45) NOT NULL,
+  `artist_password` varchar(45) NOT NULL,
+  PRIMARY KEY (`artist_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `message` (
+  `message_id` int NOT NULL AUTO_INCREMENT,
+  `Muser_id` int NOT NULL,
+  `message` varchar(900) DEFAULT NULL,
+  PRIMARY KEY (`message_id`),
+  KEY `Muser_id_idx` (`Muser_id`),
+  CONSTRAINT `Muser_id` FOREIGN KEY (`Muser_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `order` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `Product_id` int NOT NULL,
+  `User_id` int NOT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `payment` varchar(45) NOT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `Product_id_idx` (`Product_id`),
+  KEY `User_id_idx` (`User_id`),
+  CONSTRAINT `Product_id` FOREIGN KEY (`Product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `User_id` FOREIGN KEY (`User_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `product` (
+  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(45) NOT NULL,
+  `price` varchar(45) NOT NULL,
+  `description` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `phone_no` varchar(45) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
