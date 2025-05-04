@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* Google Fonts Import - Replace with your preferred font if needed */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffd1dc 0%, #e0c3fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Login Card Styling */
+.login-card {
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 600px;
+}
+
+.login-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-image {
+    flex: 1;
+    background: linear-gradient(135deg, #d891ef 0%, #846bde 100%);
+    background-image: url('https://via.placeholder.com/600x800');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* This creates the overlay effect to match the design */
+.banner-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(216, 145, 239, 0.7) 0%, rgba(132, 107, 222, 0.7) 100%);
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    font-weight: 700;
+    background: #333;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand {
+    font-size: 18px;
+    font-weight: 600;
+    color :purple;
+}
+
+.slogan {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Form Styling */
+h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #846bde;
+    outline: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.forgot-link {
+    color: #846bde;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #333;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #555;
+}
+
+.register-link a {
+    color: #846bde;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links {
+    margin-top: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .banner-image {
+        display: none;
+    }
+    
+    .login-card {
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-content {
+        padding: 30px 20px;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

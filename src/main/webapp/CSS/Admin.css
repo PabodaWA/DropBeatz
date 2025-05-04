@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  text-align: right;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.admin-container {
+  display: flex;
+  height: calc(100vh - 150px); /* Adjust based on your header/footer */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #121230;
+  color: white;
+  padding: 20px;
+  height: 100%;
+}
+
+.sidebar h2 {
+  color: cyan;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+
+/* Content */
+.content {
+ width: 60%;
+  flex: 2;
+  padding: 30px;
+  background-color:purple;
+  overflow-y: auto;
+}
+
+.content h1 {
+  color: black;
+  background-color: aqua;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Buttons */
+.update-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+  opacity: 0.8;
+}
