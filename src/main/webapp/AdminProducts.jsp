@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,21 +34,39 @@
       <thead>
         <tr>
           <th>Product ID</th>
-          <th>Price</th>
-           <th>Actions</th>
+          <th>Product Name</th>
+           <th>Price</th>
+           <th>Description</th>
+          <th>Action</th>
 
         </tr>
       </thead>
+      
       <tbody>
+      
+                
+       <c:forEach var="a_product" items="${allProducts}">
+    
+      
         <tr>
-          <td>101</td>
-          <td>$9.99</td>
+          <td>${a_product.product_id}</td>
+          <td>${a_product.product_name}</td>
+          <td>${a_product.price}</td>
+          <td>${a_product.description}</td>
           <td>
             <button class="update-btn">Update</button>
             <button class="delete-btn">Delete</button>
           </td>
         </tr>
+        
+       </c:forEach>
+        
       </tbody>
+      
+     
+      </tbody>
+      
+      
     </table>
   </main>
 
