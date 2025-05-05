@@ -20,7 +20,7 @@ public class AdmingetallServlet extends HttpServlet {
 		
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		List<AdminProductModel> allProducts = AdminProductController.getAllproduct();
 		request.setAttribute("allProducts", allProducts);
@@ -28,7 +28,16 @@ public class AdmingetallServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("AdminProducts.jsp");
 		dispatcher.forward(request, response);
 		
-	}
+	
+
+
+		
+
+		
+	}  
+	
+	
+
 
 
 }

@@ -58,6 +58,6 @@ public class AdminProductModel {
 		this.description = description;
 	}
 	
-	
+
 	
 }

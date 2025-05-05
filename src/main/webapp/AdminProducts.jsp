@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*, AdminProduct.AdminProductModel" %>
+<%@ page import="AdminProduct.AdminProductController" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,33 +39,34 @@
           <th>Product Name</th>
            <th>Price</th>
            <th>Description</th>
+           <th>Link</th>
           <th>Action</th>
 
         </tr>
       </thead>
       
       <tbody>
-      
-                
-       <c:forEach var="a_product" items="${allProducts}">
-    
-      
-        <tr>
-          <td>${a_product.product_id}</td>
-          <td>${a_product.product_name}</td>
-          <td>${a_product.price}</td>
-          <td>${a_product.description}</td>
-          <td>
+      <%
+    List<AdminProductModel> productList = AdminProductController.getAllproduct();
+%>
+      <%
+        for(AdminProductModel product : productList){
+    %>
+    <tr>
+        <td><%= product.getProduct_id() %></td>
+        <td><%= product.getProduct_name() %></td>
+        <td><%= product.getPrice() %></td>
+        <td><%= product.getDescription() %></td>
+        <td><%= product.getLink()%></td>
+         <td>
             <button class="update-btn">Update</button>
             <button class="delete-btn">Delete</button>
           </td>
-        </tr>
-        
-       </c:forEach>
-        
-      </tbody>
+    </tr>
+    <%
+        }
+    %>
       
-     
       </tbody>
       
       
