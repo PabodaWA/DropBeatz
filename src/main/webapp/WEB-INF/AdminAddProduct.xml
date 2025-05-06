@@ -26,6 +26,25 @@
      	<url-pattern>/AdmingetallServlet</url-pattern>
      </servlet-mapping>
      
+          <servlet>
+     	<servlet-name>AdminProductUpdateServelet</servlet-name>
+     	<servlet-class>AdminProduct.AdminProductUpdateServelet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>AdminProductUpdateServelet</servlet-name>
+     	<url-pattern>/AdminProductUpdateServelet</url-pattern>
+     </servlet-mapping>
+     
+     
+               <servlet>
+     	<servlet-name>AdminProductDeleteServlet</servlet-name>
+     	<servlet-class>AdminProduct.AdminProductDeleteServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>AdminProductDeleteServlet</servlet-name>
+     	<url-pattern>/AdminProductDeleteServlet</url-pattern>
+     </servlet-mapping>
+     
 
 
 </web-app>

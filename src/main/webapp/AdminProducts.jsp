@@ -59,9 +59,17 @@
         <td><%= product.getDescription() %></td>
         <td><%= product.getLink()%></td>
          <td>
+         
+			<a href="AdminUpdateProduct.jsp?product_id=<%= product.getProduct_id() %>&product_name=<%= product.getProduct_name() %>&price=<%= product.getPrice() %>&description=<%= product.getDescription() %>&link=<%= product.getLink() %>" >
+       
             <button class="update-btn">Update</button>
-            <button class="delete-btn">Delete</button>
-          </td>
+            </a> 
+<form action="AdminProductDeleteServlet" method="post">
+    <input type="hidden" name="product_id" value="<%= product.getProduct_id() %>">
+    <button class="delete-btn" type="submit">Delete</button>
+</form>          
+
+</td>
     </tr>
     <%
         }

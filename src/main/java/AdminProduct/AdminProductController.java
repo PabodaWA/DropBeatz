@@ -54,7 +54,7 @@ public class AdminProductController {
 	}
 	
 	//GetByID
-		public static List<AdminProductModel> getById (int product_Id){
+		public static List<AdminProductModel> getById (String product_Id){
 			
 			ArrayList <AdminProductModel> a_product = new ArrayList<>();
 			
@@ -69,13 +69,13 @@ public class AdminProductController {
 			
 			//Query
 			
-			String sql = "select * from product where product_id '"+product_Id+ "'";
+			String sql = "select * from product where product_id = '"+product_Id+ "'";
 			
 			rs = stmt.executeQuery(sql);
 			
 			while (rs.next()) {
 				
-				int product_id = rs.getInt(1);
+				String product_id = rs.getString(1);
 				String product_name = rs.getString(2);
 				String price = rs.getString(3);
 				String description = rs.getString(4);
@@ -119,7 +119,7 @@ public static List<AdminProductModel> getAllproduct(){
 	
 	while (rs.next()) {
 		
-		int product_id = rs.getInt(1);
+		String product_id = rs.getString(1);
 		String product_name = rs.getString(2);
 		String price = rs.getString(3);
 		String description = rs.getString(4);
@@ -140,6 +140,87 @@ catch(Exception e) {
 return a_products;
 	
 }
+
+//update data
+
+public static boolean updatedata(String product_id,String product_name,String price,String description,String link) {
+	
+
+	try {
+		
+	
+	//DB connection
+	
+	con = AdminProductDBconection.getConnection();
+	stmt = con.createStatement();
+	
+	//sql Query
+	
+	String sql = "update product set product_name= '"+product_name+ "',price ='"+price+"',description = '"+description+"',link ='"+link+"'"
+			+"where product_id = '"+product_id+"' ";
+	
+	int rs = stmt.executeUpdate(sql);
+	
+	if (rs > 0) {
+		
+		isSuccess = true;
+	}
+	
+	else {
+		
+		isSuccess = false;
+	}
+	
+	
+	}
+	catch(Exception e) {
+		
+		e.printStackTrace();
+	}
+	
+	return isSuccess;
+	
+	
+}
+
+//delete data
+
+public static boolean deletedata(String product_id) {
+	
+	int convID = Integer.parseInt(product_id);
+	
+	try {
+		
+		//DBConnection
+		
+		con = AdminProductDBconection.getConnection();
+		stmt = con.createStatement();
+		
+		String sql = "delete from product where product_id = '"+convID+"'";
+		
+		int rs = stmt.executeUpdate(sql);
+		
+		if (rs > 0) {
+			
+			isSuccess = true;
+		}
+		
+		else {
+			
+			isSuccess = false;
+		}
+	}
+	catch(Exception e) {
+		
+		e.printStackTrace();
+	}
+	
+	return isSuccess;
+	
+	
+	
+}
+
 
 
 }
