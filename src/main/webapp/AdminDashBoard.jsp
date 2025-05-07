@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+       <%@ page import="SignUpPackage.Admin" %> 
+ <%
+    // Check if admin is logged in
+    Admin admin = null;
+    try {
+        admin = (Admin) session.getAttribute("user");
+        if (admin == null || !"admin".equals(admin.getUserType())) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+    } catch (ClassCastException e) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +26,13 @@
 <body>
 <jsp:include page="Header.jsp" />
   <header>
+  
+  <div class="header">
+            <h1>Admin Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, <%= admin.getUsername() %> (Role: <%= admin.getAdminRole() %>)</span>
+                <a href="logout" class="btn-logout">Logout</a>
+            </div>
     <h1><a href="AdminDashBoard.jsp">Admin Dashboard</a></h1>
   </header>
 

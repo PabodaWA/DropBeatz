@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Google Fonts Import - Replace with your preferred font if needed */
+/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Reset and Base Styles */
@@ -12,7 +12,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #ffd1dc 0%, #e0c3fc 100%);
+    background: linear-gradient(135deg, #000 0%, #ff0000 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,11 +27,11 @@ body {
 
 /* Login Card Styling */
 .login-card {
-    background-color: white;
+    background-color: #111;
     border-radius: 24px;
     overflow: hidden;
     display: flex;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
     height: 600px;
 }
 
@@ -42,16 +42,16 @@ body {
     flex-direction: column;
 }
 
+/* Right side image panel */
 .banner-image {
     flex: 1;
-    background: linear-gradient(135deg, #d891ef 0%, #846bde 100%);
-    background-image: url('https://via.placeholder.com/600x800');
+    background: linear-gradient(black 60%, red 40%);
+    background-image: url('/DropBeatZ/Pictures/1.png'); /* Make sure image path is correct */
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-/* This creates the overlay effect to match the design */
 .banner-image::after {
     content: '';
     position: absolute;
@@ -59,7 +59,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(216, 145, 239, 0.7) 0%, rgba(132, 107, 222, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 0, 0, 0.7) 100%);
 }
 
 /* Logo Styling */
@@ -72,7 +72,7 @@ body {
 .logo-icon {
     font-size: 24px;
     font-weight: 700;
-    background: #333;
+    background: red;
     color: white;
     width: 40px;
     height: 40px;
@@ -92,19 +92,19 @@ body {
 .brand {
     font-size: 18px;
     font-weight: 600;
-    color :purple;
+    color: red;
 }
 
 .slogan {
     font-size: 14px;
-    color: #777;
+    color: #aaa;
 }
 
 /* Form Styling */
 h1 {
     font-size: 26px;
     font-weight: 600;
-    color: #333;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -117,15 +117,17 @@ input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 15px;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #444;
     border-radius: 8px;
     font-size: 15px;
+    background-color: #222;
+    color: white;
     transition: border-color 0.3s;
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #846bde;
+    border-color: red;
     outline: none;
 }
 
@@ -137,7 +139,7 @@ input[type="password"]:focus {
     background: none;
     border: none;
     cursor: pointer;
-    color: #777;
+    color: red;
 }
 
 .form-options {
@@ -146,6 +148,7 @@ input[type="password"]:focus {
     align-items: center;
     margin-bottom: 25px;
     font-size: 14px;
+    color: white;
 }
 
 .remember-me {
@@ -158,36 +161,36 @@ input[type="password"]:focus {
 }
 
 .forgot-link {
-    color: #846bde;
+    color: red;
     text-decoration: none;
 }
 
 .login-btn {
     width: 100%;
-    background-color: #000;
-    color: white;
+    background-color: red;
+    color: black;
     border: none;
     padding: 15px;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .login-btn:hover {
-    background-color: #333;
+    background-color: #cc0000;
 }
 
 .register-link {
     text-align: center;
     margin-top: 25px;
     font-size: 14px;
-    color: #555;
+    color: white;
 }
 
 .register-link a {
-    color: #846bde;
+    color: red;
     text-decoration: none;
     font-weight: 500;
 }
@@ -196,11 +199,11 @@ input[type="password"]:focus {
     margin-top: auto;
     text-align: center;
     font-size: 12px;
-    color: #777;
+    color: #aaa;
 }
 
 .footer-links a {
-    color: #777;
+    color: #aaa;
     text-decoration: none;
 }
 
@@ -209,7 +212,7 @@ input[type="password"]:focus {
     .banner-image {
         display: none;
     }
-    
+
     .login-card {
         height: auto;
     }
@@ -219,7 +222,7 @@ input[type="password"]:focus {
     .login-content {
         padding: 30px 20px;
     }
-    
+
     .form-options {
         flex-direction: column;
         align-items: flex-start;
