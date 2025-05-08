@@ -27,9 +27,9 @@
                     </div>
                 </div>
                 <h1>Log in</h1>
-                <form id="loginForm" action="login" method="post">
+                <form id="loginForm" action="Signup" method="post">
                     <div class="input-group">
-                    <label for="username">Username:</label>
+                    <label for="username">User name:</label>
                         <input type="text" id="username" name="username" required>
                     </div>
                     <div class="input-group">
