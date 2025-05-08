@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <link rel="stylesheet" href="./CSS/partials.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <script src="./js/partials.js"></script>
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,9 @@
         <div>
             <div class="footer_container">
                 <div class="footer-content">
-                    <img src="./Images/Pharmacy X.png" alt="" width="150px">
+                    <img src="./Pictures/logo.png" alt="" width="100px" hight="100px">
     
-                    <p class="footer-details">166/2,<br> Havelock Road,<br> Colombo 05.</p>
+                    <p class="footer-content">166/2,<br> Havelock Road,<br> Colombo 05.</p>
 
                     <div class="social-media-icons-container">
                         
@@ -37,7 +37,7 @@
                 <div class="footer-content">
                     <h3 footer-heading>Support</h3>
                     <p class="footer-details"><a href="" class="footer-links">&#10148 Pricing</a></p>
-                    <p class="footer-details"><a href="" class="footer-links">&#10148 Documentaion</a></p>
+                    <p class="footer-details"><a href="" class="footer-links">&#10148Documentation</a></p>
                     <p class="footer-details"><a href="" class="footer-links">&#10148 Guides</a></p>
                 </div>
     
@@ -51,15 +51,15 @@
             <hr class="footer-row">
             <div class="footer-end">
                 <div>
-                <p class="copyright-tag">Copyright &copy; 2024 <span class="bold-text">RhythmRack</span> All right reserved</p>
+                <p class="footer-content">Copyright &copy; 2024 <span class="bold-text">DropBeatZ</span> All right reserved</p>
                 </div>
 
                 <div class="footer-end-links">
-                    <div><a href="t&c.php" class="footer-end-links-content">Terms & Conditions</a></div>
+                    <div><a href="T&C.jsp" class="footer-end-links-content">Terms & Conditions</a></div>
 
                     <div><h3>|</h3></div>
 
-                    <div><a href="privacyPolicy.php" class="footer-end-links-content">Privacy Policy</a></div>
+                    <div><a href="privacyPolicy.jsp" class="footer-end-links-content">Privacy Policy</a></div>
                 </div>
             </div>
         </div>

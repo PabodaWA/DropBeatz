@@ -45,7 +45,7 @@
     }
 
     .signin-button button:hover {
-      background-color: #0056b3;
+      background-color:red;
     }
   </style>
 </head>
@@ -58,10 +58,10 @@
 
   <!-- Center Navigation -->
   <nav>
-    <a href="home.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="products.html">Product</a>
+    <a href="Home.jsp">Home</a>
+    <a href="AboutUs.jsp">About Us</a>
+    <a href="ContactUs.jsp">Contact Us</a>
+    <a href="Product.jsp">Product</a>
   </nav>
 
   <!-- Right Sign In -->
