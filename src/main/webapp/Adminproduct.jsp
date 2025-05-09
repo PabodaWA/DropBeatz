@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*, AdminProduct.AdminProductModel" %>
+<%@ page import="AdminProduct.AdminProductController" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +30,7 @@
             
             <div class="nav-section">
                 <h3>Management</h3>
-                <a href="AdminProducts.jsp" class="nav-item">
+                <a href="Adminproduct.jsp" class="nav-item">
                     <i class="fas fa-music"></i>
                     <span>Products</span>
                 </a>
@@ -45,6 +47,7 @@
                     <span>Messages</span>
                 </a>
             </div>
+            
             <div class="nav-section">
                 <h3>Settings</h3>
                 <a href="profile.jsp" class="nav-item">
@@ -90,57 +93,59 @@
             <!-- Admin List Table -->
             <div class="table-container">
                 <div class="table-header">
-                    <h3>Artist Control</h3>
+                    <h3>Messages</h3>
+                    <a href="AdminAddProductForm.jsp" class="nav-item">
                     <button class="add-button">
-                        <i class="fas fa-plus"></i> Add Artist
+                        <i class="fas fa-plus"></i> Add Product
                     </button>
+                   </a>
                 </div>
                 
                 <table>
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
+                       <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+           <th>Price</th>
+           <th>Description</th>
+           <th>Link</th>
+          <th>Action</th>
+
+        </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>admin</td>
-                            <td>admin@dropbeatz.com</td>
-                            <td>Super Admin</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
+                        <%
+    List<AdminProductModel> productList = AdminProductController.getAllproduct();
+%>
+      <%
+        for(AdminProductModel product : productList){
+    %>
+    <tr>
+        <td><%= product.getProduct_id() %></td>
+        <td><%= product.getProduct_name() %></td>
+        <td><%= product.getPrice() %></td>
+        <td><%= product.getDescription() %></td>
+        <td><%= product.getLink()%></td>
+        
+                           <td>
+         
+			<a href="AdminUpdateProduct.jsp?product_id=<%= product.getProduct_id() %>&product_name=<%= product.getProduct_name() %>&price=<%= product.getPrice() %>&description=<%= product.getDescription() %>&link=<%= product.getLink() %>" >
+       
+            <button class="action-button edit-button">Update</button>
+            </a> 
+           
+<form action="AdminProductDeleteServlet" method="post">
+    <input type="hidden" name="product_id" value="<%= product.getProduct_id() %>">
+    <button class="action-button delete-button" type="submit">Delete</button>
+</form>          
+
+</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>manager</td>
-                            <td>manager@dropbeatz.com</td>
-                            <td>Content Manager</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>editor</td>
-                            <td>editor@dropbeatz.com</td>
-                            <td>Editor</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
+                        
+                           <%
+        }
+    %>
+      
                     </tbody>
                 </table>
             </div>

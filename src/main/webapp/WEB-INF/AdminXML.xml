@@ -64,6 +64,47 @@
      	<servlet-name>login</servlet-name>
      	<url-pattern>/login</url-pattern>
      </servlet-mapping>
+     
+     
+     
+     <servlet>
+     	<servlet-name>AdminInsertServlet</servlet-name>
+     	<servlet-class>AdminPackage.AdminInsertServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>AdminInsertServlet</servlet-name>
+     	<url-pattern>/AdminInsertServlet</url-pattern>
+     </servlet-mapping>
+     
+          <servlet>
+     	<servlet-name>Admin_AgetallServlet</servlet-name>
+     	<servlet-class>AdminPackage.Admin_AgetallServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>Admin_AgetallServlet</servlet-name>
+     	<url-pattern>/Admin_AgetallServlet</url-pattern>
+     </servlet-mapping>
+     
+          <servlet>
+     	<servlet-name>AdminUpdateServelet</servlet-name>
+     	<servlet-class>AdminPackage.AdminUpdateServelet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>AdminUpdateServelet</servlet-name>
+     	<url-pattern>/AdminUpdateServelet</url-pattern>
+     </servlet-mapping>
+     
+     
+               <servlet>
+     	<servlet-name>AdminDeleteServlet</servlet-name>
+     	<servlet-class>AdminPackage.AdminDeleteServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>AdminDeleteServlet</servlet-name>
+     	<url-pattern>/AdminDeleteServlet</url-pattern>
+     </servlet-mapping>
+     
+
 
 
 </web-app>

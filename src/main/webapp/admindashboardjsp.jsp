@@ -20,7 +20,7 @@
             
             <div class="nav-section">
                 <h3>Main</h3>
-                <a href="admindashboard.jsp" class="nav-item active">
+                <a href="admindashboardjsp.jsp" class="nav-item active">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
@@ -45,6 +45,7 @@
                     <span>Messages</span>
                 </a>
             </div>
+            
             <div class="nav-section">
                 <h3>Settings</h3>
                 <a href="profile.jsp" class="nav-item">
@@ -90,9 +91,9 @@
             <!-- Admin List Table -->
             <div class="table-container">
                 <div class="table-header">
-                    <h3>Artist Control</h3>
+                    <h3>Admin List</h3>
                     <button class="add-button">
-                        <i class="fas fa-plus"></i> Add Artist
+                        <i class="fas fa-plus"></i> Add Admin
                     </button>
                 </div>
                 
@@ -145,6 +146,68 @@
                 </table>
             </div>
             
+            <!-- Stats Cards -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px;">
+                <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="color: #999; font-size: 14px;">Total Products</p>
+                            <h3 style="font-size: 24px; margin-top: 5px;">254</h3>
+                        </div>
+                        <div style="background-color: rgba(233, 30, 99, 0.2); padding: 10px; border-radius: 50%;">
+                            <i class="fas fa-music" style="color: #e91e63; font-size: 20px;"></i>
+                        </div>
+                    </div>
+                    <p style="color: #2ecc71; font-size: 12px; margin-top: 10px;">
+                        <i class="fas fa-arrow-up"></i> 12.5% from last month
+                    </p>
+                </div>
+                
+                <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="color: #999; font-size: 14px;">Total Artists</p>
+                            <h3 style="font-size: 24px; margin-top: 5px;">75</h3>
+                        </div>
+                        <div style="background-color: rgba(33, 150, 243, 0.2); padding: 10px; border-radius: 50%;">
+                            <i class="fas fa-user-friends" style="color: #2196f3; font-size: 20px;"></i>
+                        </div>
+                    </div>
+                    <p style="color: #2ecc71; font-size: 12px; margin-top: 10px;">
+                        <i class="fas fa-arrow-up"></i> 5.3% from last month
+                    </p>
+                </div>
+                
+                <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="color: #999; font-size: 14px;">Total Users</p>
+                            <h3 style="font-size: 24px; margin-top: 5px;">3,521</h3>
+                        </div>
+                        <div style="background-color: rgba(46, 204, 113, 0.2); padding: 10px; border-radius: 50%;">
+                            <i class="fas fa-users" style="color: #2ecc71; font-size: 20px;"></i>
+                        </div>
+                    </div>
+                    <p style="color: #2ecc71; font-size: 12px; margin-top: 10px;">
+                        <i class="fas fa-arrow-up"></i> 8.7% from last month
+                    </p>
+                </div>
+                
+                <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="color: #999; font-size: 14px;">New Messages</p>
+                            <h3 style="font-size: 24px; margin-top: 5px;">28</h3>
+                        </div>
+                        <div style="background-color: rgba(233, 30, 99, 0.2); padding: 10px; border-radius: 50%;">
+                            <i class="fas fa-envelope" style="color: #e91e63; font-size: 20px;"></i>
+                        </div>
+                    </div>
+                    <p style="color: #e74c3c; font-size: 12px; margin-top: 10px;">
+                        <i class="fas fa-arrow-down"></i> 2.1% from last month
+                    </p>
+                </div>
+            </div>
             
             <footer>
                 <p>Copyright © DropBeatz 2025. All rights reserved.</p>

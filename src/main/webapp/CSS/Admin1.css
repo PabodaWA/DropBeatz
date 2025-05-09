@@ -60,13 +60,13 @@ html, body {
  width: 60%;
   flex: 2;
   padding: 30px;
-  background-color:purple;
+  background-color:red;
   overflow-y: auto;
 }
 
 .content h1 {
-  color: black;
-  background-color: aqua;
+  color:red;
+  background-color:black;
   padding: 10px;
   text-align: center;
 }

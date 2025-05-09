@@ -24,17 +24,21 @@ public class UserController {
             con = AdminProductDBconection.getConnection();
             stmt = con.createStatement();
 
-            String sql = "SELECT * FROM users WHERE username ='" + username + "' AND password='" + password + "'";
-            rs = stmt.executeQuery(sql); // <-- Corrected here
+            String sql = "SELECT * FROM user WHERE username ='" + username + "' AND password='" + password + "'";
+            rs = stmt.executeQuery(sql); 
 
             if (rs.next()) {
                 int id = rs.getInt(1);
-                String Username = rs.getString(2);
-                String Password = rs.getString(3);
-                String email = rs.getString(4);
-                String user_type = rs.getString(5);
+                String fullname = rs.getString(2);
+                String Username = rs.getString(3);
+                String country = rs.getString(4);
+                String contactnimber = rs.getString(5);
+                String email = rs.getString(6);
+                String Password = rs.getString(7);
+               
+               
 
-                UserModel u = new UserModel(id, Username, Password, email, user_type);
+                UserModel u = new UserModel(id, fullname, Username, country, contactnimber, Password, email);
                 user.add(u);
             }
 
@@ -42,6 +46,6 @@ public class UserController {
             e.printStackTrace();
         }
 
-        return user; // <-- Don't forget to return
+        return user; 
     }
 }

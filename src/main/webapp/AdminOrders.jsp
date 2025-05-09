@@ -6,25 +6,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./CSS/Admin.css">
+    <link rel="stylesheet" href="./CSS/Admin1.css">
     <title>Admin Dashboard - Orders</title>
 </head>
 <body>
     <jsp:include page="Header.jsp" />
     <!-- WRAP everything inside .admin-container -->
     <div class="admin-container">
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <a href="AdminDashBoard.jsp"><h2>Admin Dashboard</h2></a>
-            <ul>
-                <li><a href="AdminGetAllOrderServlet">Orders</a></li>
-                <li><a href="AdminProducts.jsp">Products</a></li>
-                <li><a href="AdminMessages.jsp">Messages</a></li>
-                <li><a href="AdminArtist.jsp">Artists</a></li>
-                <li><a href="AdminUser.jsp">Customer Control</a></li>
-            </ul>
-        </nav>
-
+ <!-- Sidebar -->
+  <nav class="sidebar">
+    <a href="AdminDashBoard.jsp"><h2>Admin Dashboard</h2></a>
+ <ul>
+ 	<li><a href="AdminOrders.jsp">Orders</a></li>
+    <li><a href="AdminProducts.jsp">Products</a></li>
+    <li><a href="AdminMessages.jsp">Messages</a></li>
+    <li><a href="AdminArtist.jsp">Artist Control</a></li>
+    <li><a href="AdminUser.jsp">User Control</a></li>
+    <li><a href="Admin.jsp">Admin Control</a></li>
+  </ul>
+</nav>
         <!-- Main Content -->
         <main class="content">
             <h1>Orders</h1>
