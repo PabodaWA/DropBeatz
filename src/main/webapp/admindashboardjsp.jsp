@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*, Admin.AdminModel" %>
+<%@ page import="Admin.AdminController" %>
+
+    <%
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("Signin.jsp");
+        return;
+    }
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +39,11 @@
             
             <div class="nav-section">
                 <h3>Management</h3>
-                <a href="AdminProducts.jsp" class="nav-item">
+                <a href="AdminProduct.jsp" class="nav-item">
                     <i class="fas fa-music"></i>
                     <span>Products</span>
                 </a>
-                <a href="AdminArtists.jsp" class="nav-item">
+                <a href="AdminArtist.jsp" class="nav-item">
                     <i class="fas fa-user-friends"></i>
                     <span>Artists</span>
                 </a>
@@ -53,7 +64,7 @@
                     <span>Profile</span>
                 </a>
 
-                <a href="logout.jsp" class="nav-item">
+                <a href="adminlogout.jsp" class="nav-item">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -82,9 +93,9 @@
                     </div>
                     
                     <div class="user-profile">
-                        <img src="/api/placeholder/35/35" alt="Admin Profile">
-                        <span>Admin</span>
-                    </div>
+    <img src="/api/placeholder/35/35" alt="Admin Profile">
+    <span><%= session.getAttribute("username") %></span>
+</div>
                 </div>
             </div>
             
@@ -92,56 +103,52 @@
             <div class="table-container">
                 <div class="table-header">
                     <h3>Admin List</h3>
+                    <a href="AdminAddadminForm.jsp" >
                     <button class="add-button">
                         <i class="fas fa-plus"></i> Add Admin
                     </button>
+                    </a>
                 </div>
                 
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>fullname</th>
                             <th>Username</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>country</th>
+                            <th>contactnumber</th>
+                            <th>email</th>
+                            <th>Password </th>
+                            <th>role </th>
                         </tr>
                     </thead>
                     <tbody>
+                      <%
+    List<AdminModel> adminList = AdminController.getAllAdmin();
+%>
+      <%
+        for(AdminModel admin : adminList){
+    %>
                         <tr>
-                            <td>1</td>
-                            <td>admin</td>
-                            <td>admin@dropbeatz.com</td>
-                            <td>Super Admin</td>
-                            <td><span class="status active">Active</span></td>
+                            <td><%= admin.getId()%></td>
+                            <td><%= admin.getFullname()%></td>
+                            <td><%= admin.getUsername()%></td>
+                            <td><%= admin.getCountry()%></td>
+                            <td><%= admin.getContactnumber()%></td>
+                            <td><%= admin.getPassword()%></td>
+                            <td><%= admin.getEmail()%></td>
+                            <td><%= admin.getRole()%></td>
+                            
                             <td>
                                 <button class="action-button edit-button">Edit</button>
                                 <button class="action-button delete-button">Delete</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>manager</td>
-                            <td>manager@dropbeatz.com</td>
-                            <td>Content Manager</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>editor</td>
-                            <td>editor@dropbeatz.com</td>
-                            <td>Editor</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
+                       
+                           <%
+        }
+    %>
                     </tbody>
                 </table>
             </div>

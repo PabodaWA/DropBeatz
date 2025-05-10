@@ -1,10 +1,9 @@
-package AdminPackage;
+package Admin;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-	
 	
 	private static String url = "jdbc:mysql://127.0.0.1:3306/dropbeatz";
 	private static String user = "DropBeatZ";
@@ -30,6 +29,6 @@ public class DBConnection {
 		}
 		
 		return con;
+	}
 
-}
 }

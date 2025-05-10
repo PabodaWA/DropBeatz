@@ -1,4 +1,4 @@
-package AdminPackage;
+package Admin;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Admin_AgetallServlet")
-public class Admin_AgetallServlet extends HttpServlet {
+
+@WebServlet("/getallAdminServlet")
+public class getallAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,13 +24,11 @@ public class Admin_AgetallServlet extends HttpServlet {
 	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<AdminModel> alladmin = AdminController.getAlladmi();
-		request.setAttribute("alladmin", alladmin);
+		List<AdminModel> alladmins = AdminController.getAllAdmin();
+		request.setAttribute("alladmins", alladmins);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Admin.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("admindashboardjsp.jsp");
 		dispatcher.forward(request, response);
-		
-	
-}
+	}
 
 }

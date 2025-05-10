@@ -77,12 +77,12 @@
      </servlet-mapping>
      
           <servlet>
-     	<servlet-name>Admin_AgetallServlet</servlet-name>
-     	<servlet-class>AdminPackage.Admin_AgetallServlet</servlet-class>
+     	<servlet-name>getallAdminServlet</servlet-name>
+     	<servlet-class>Admin.getallAdminServlet</servlet-class>
      </servlet>
      <servlet-mapping>
-     	<servlet-name>Admin_AgetallServlet</servlet-name>
-     	<url-pattern>/Admin_AgetallServlet</url-pattern>
+     	<servlet-name>getallAdminServlet</servlet-name>
+     	<url-pattern>/getallAdminServlet</url-pattern>
      </servlet-mapping>
      
           <servlet>

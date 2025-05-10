@@ -2,6 +2,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.*, AdminProduct.AdminProductModel" %>
 <%@ page import="AdminProduct.AdminProductController" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("Signin.jsp");
+        return;
+    }
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +31,7 @@
             
             <div class="nav-section">
                 <h3>Main</h3>
-                <a href="admindashboard.jsp" class="nav-item active">
+                <a href="admindashboard.jsp" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
@@ -30,11 +39,11 @@
             
             <div class="nav-section">
                 <h3>Management</h3>
-                <a href="Adminproduct.jsp" class="nav-item">
+                <a href="Adminproduct.jsp" class="nav-item active">
                     <i class="fas fa-music"></i>
                     <span>Products</span>
                 </a>
-                <a href="AdminArtists.jsp" class="nav-item">
+                <a href="AdminArtist.jsp" class="nav-item">
                     <i class="fas fa-user-friends"></i>
                     <span>Artists</span>
                 </a>
@@ -55,7 +64,7 @@
                     <span>Profile</span>
                 </a>
 
-                <a href="logout.jsp" class="nav-item">
+                <a href="adminlogout.jsp" class="nav-item">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -94,7 +103,7 @@
             <div class="table-container">
                 <div class="table-header">
                     <h3>Messages</h3>
-                    <a href="AdminAddProductForm.jsp" class="nav-item">
+                    <a href="AdminAddProductForm.jsp" >
                     <button class="add-button">
                         <i class="fas fa-plus"></i> Add Product
                     </button>

@@ -28,17 +28,18 @@ public class UserController {
             rs = stmt.executeQuery(sql); 
 
             if (rs.next()) {
-                int id = rs.getInt(1);
+            	int id = rs.getInt(1);
                 String fullname = rs.getString(2);
                 String Username = rs.getString(3);
                 String country = rs.getString(4);
-                String contactnimber = rs.getString(5);
+                String contactnumber = rs.getString(5);
                 String email = rs.getString(6);
                 String Password = rs.getString(7);
+                String role = rs.getString(8);
                
                
 
-                UserModel u = new UserModel(id, fullname, Username, country, contactnimber, Password, email);
+                UserModel u = new UserModel(id, fullname, Username, country, contactnumber, email, Password, role);
                 user.add(u);
             }
 

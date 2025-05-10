@@ -1,8 +1,9 @@
-package UserPackage;
+package Admin;
 
-public class UserModel {
+public class AdminModel {
 	
-	private int id;
+
+	private String id;
 	private String fullname;
 	private String username;
 	private String country;
@@ -11,7 +12,7 @@ public class UserModel {
 	private String email;
 	private String role;
 	
-	public UserModel(int id, String fullname, String username, String country, String contactnumber, String password,
+	public AdminModel(String id, String fullname, String username, String country, String contactnumber, String password,
 			String email, String role) {
 		super();
 		this.id = id;
@@ -24,7 +25,7 @@ public class UserModel {
 		this.role = role;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -56,7 +57,7 @@ public class UserModel {
 		return role;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -87,8 +88,6 @@ public class UserModel {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
 	
 
 }
