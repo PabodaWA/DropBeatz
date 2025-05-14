@@ -12,7 +12,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #000 0%, #ff0000 100%);
+    background: linear-gradient(135deg, #000 50%, rgb(0, 0, 128) 50%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,11 +27,11 @@ body {
 
 /* Login Card Styling */
 .login-card {
-    background-color: #111;
+    background-color: rgb(192, 192, 192);
     border-radius: 24px;
     overflow: hidden;
     display: flex;
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgb(0, 64, 128);
     height: 600px;
 }
 
@@ -45,7 +45,7 @@ body {
 /* Right side image panel */
 .banner-image {
     flex: 1;
-    background: linear-gradient(black 60%, red 40%);
+    background: linear-gradient(black 60%, rgb(0, 64, 128) 40%);
     background-image: url('/DropBeatZ/Pictures/1.png'); /* Make sure image path is correct */
     background-size: cover;
     background-position: center;
@@ -59,7 +59,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 0, 0, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgb(0, 64, 128) 100%);
 }
 
 /* Logo Styling */
@@ -72,7 +72,7 @@ body {
 .logo-icon {
     font-size: 24px;
     font-weight: 700;
-    background: red;
+    background: rgb(0, 0, 128);
     color: white;
     width: 40px;
     height: 40px;
@@ -92,7 +92,7 @@ body {
 .brand {
     font-size: 18px;
     font-weight: 600;
-    color: red;
+    color: rgb(0, 0, 160);
 }
 
 .slogan {
@@ -127,7 +127,7 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: red;
+    border-color: rgb(192, 192, 192);
     outline: none;
 }
 
@@ -139,7 +139,7 @@ input[type="password"]:focus {
     background: none;
     border: none;
     cursor: pointer;
-    color: red;
+    color: rgb(0, 64, 128);
 }
 
 .form-options {
@@ -161,13 +161,13 @@ input[type="password"]:focus {
 }
 
 .forgot-link {
-    color: red;
+    color: rgb(0, 0, 160);
     text-decoration: none;
 }
 
 .login-btn {
     width: 100%;
-    background-color: red;
+    background-color: rgb(0, 0, 128);
     color: black;
     border: none;
     padding: 15px;
@@ -179,7 +179,7 @@ input[type="password"]:focus {
 }
 
 .login-btn:hover {
-    background-color: #cc0000;
+    background-color: rgb(0, 0, 128);
 }
 
 .register-link {
@@ -190,7 +190,7 @@ input[type="password"]:focus {
 }
 
 .register-link a {
-    color: red;
+    color: rgb(0, 0, 128);
     text-decoration: none;
     font-weight: 500;
 }
