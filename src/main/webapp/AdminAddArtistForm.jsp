@@ -10,8 +10,8 @@
 <body>
 
 <div class="form-container">
-    <h2>Add A New Admin</h2>
-    <form id="productForm" action = "AdminInsertServlet" method ="post">
+    <h2>Add A New Artist</h2>
+    <form id="productForm" action = "Admininsertartistservlet" method ="post">
       <label for="productName">Full Name:</label>
       <input type="text"  name="fullname" required>
       
@@ -24,15 +24,15 @@
       <label for="productName">Contact Number:</label>
       <input type="text" id="productName" name="contactnumber" required>
       
-      <label for="productName">Email:</label>
-      <input type="text" id="productName" name="email" required>
-      
-       <label for="productName">Password:</label>
+      <label for="productName">Password:</label>
       <input type="text" id="productName" name="password" required>
       
-      <input type="hidden" name="role" value="admin">
+       <label for="productName">Email:</label>
+      <input type="text" id="productName" name="email" required>
       
-      <button type="submit">Add Admin</button>
+      <input type="hidden" name="role" value="artist">
+      
+      <button type="submit">Add Artist</button>
     </form>
 
     

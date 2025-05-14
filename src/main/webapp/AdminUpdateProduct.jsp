@@ -18,7 +18,7 @@ String link = request.getParameter("link");
 %>
 
 <div class="form-container">
-    <h2>Add New Product</h2>
+    <h2>Updare Product Details</h2>
     <form id="productForm" action = "AdminProductUpdateServelet" method ="post">
     
     <label for="productId">Product ID:</label>

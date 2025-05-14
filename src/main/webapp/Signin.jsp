@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
                 
                 <h1>Log in</h1>
                 
-                <form id="loginForm" action="login" method="post">
+                <form id="loginForm" action="SignInServelet" method="post">
     <div class="input-group">
         <input type="text" name="username" id="username" class="username" placeholder="User Name" required>
     </div>

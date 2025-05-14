@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.*, AdminProduct.AdminProductModel" %>
-<%@ page import="AdminProduct.AdminProductController" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*, com.dropbeatzadmin.model.AdminProductModel" %>
+<%@ page import="com.dropbetzadmin.control.AdminProductController" %>
+
     <%
     if (session.getAttribute("username") == null) {
         response.sendRedirect("Signin.jsp");

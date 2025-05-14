@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.*, Admin.AdminModel" %>
-<%@ page import="Admin.AdminController" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*" %>
+<%@page import="java.util.*, com.dropbeatzadmin.model.AdminModel" %>
+<%@page import="com.dropbetzadmin.control.AdminController" %>
 
-    <%
+<%
     if (session.getAttribute("username") == null) {
         response.sendRedirect("Signin.jsp");
         return;
@@ -14,7 +14,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="./CSS/NewAdmin.css">
 <title>Admin Dashboard</title>
@@ -39,10 +38,17 @@
             
             <div class="nav-section">
                 <h3>Management</h3>
-                <a href="AdminProduct.jsp" class="nav-item">
+                <a href="Adminproduct.jsp" class="nav-item">
                     <i class="fas fa-music"></i>
                     <span>Products</span>
                 </a>
+                
+                <a href="AdminOrders.jsp" class="nav-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Orders</span>
+                </a>
+                
+                
                 <a href="AdminArtist.jsp" class="nav-item">
                     <i class="fas fa-user-friends"></i>
                     <span>Artists</span>
@@ -59,7 +65,7 @@
             
             <div class="nav-section">
                 <h3>Settings</h3>
-                <a href="profile.jsp" class="nav-item">
+                <a href="adminprofile.jsp" class="nav-item">
                     <i class="fas fa-user-cog"></i>
                     <span>Profile</span>
                 </a>
@@ -93,9 +99,9 @@
                     </div>
                     
                     <div class="user-profile">
-    <img src="/api/placeholder/35/35" alt="Admin Profile">
-    <span><%= session.getAttribute("username") %></span>
-</div>
+                        <img src="/api/placeholder/35/35" alt="Admin Profile">
+                        <span><%= session.getAttribute("username") %></span>
+                    </div>
                 </div>
             </div>
             
@@ -118,18 +124,18 @@
                             <th>Username</th>
                             <th>country</th>
                             <th>contactnumber</th>
-                            <th>email</th>
                             <th>Password </th>
+                            <th>email</th>
                             <th>role </th>
                         </tr>
                     </thead>
                     <tbody>
-                      <%
-    List<AdminModel> adminList = AdminController.getAllAdmin();
-%>
-      <%
-        for(AdminModel admin : adminList){
-    %>
+                    <%
+                        AdminController adminController = new AdminController();
+                        List<AdminModel> adminList = adminController.getAllAdmin();
+
+                        for(AdminModel admin : adminList) {
+                    %>
                         <tr>
                             <td><%= admin.getId()%></td>
                             <td><%= admin.getFullname()%></td>
@@ -141,14 +147,19 @@
                             <td><%= admin.getRole()%></td>
                             
                             <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
+                                <a href="AdminUpdateAdmin.jsp?id=<%= admin.getId() %>&fullname=<%= admin.getFullname() %>&username=<%= admin.getUsername()%>&country=<%= admin.getCountry() %>&contactnumber=<%=admin.getContactnumber() %>&password=<%=admin.getPassword() %>&email=<%=admin.getEmail() %>&role=<%=admin.getRole() %>" >
+                                    <button class="action-button edit-button">Update</button>
+                                </a> 
+                                
+                                <form action="Admindeleteservelet" method="post">
+                                    <input type="hidden" name="id" value="<%= admin.getId() %>">
+                                    <button class="action-button delete-button" type="submit">Delete</button>
+                                </form>         
                             </td>
                         </tr>
-                       
-                           <%
-        }
-    %>
+                    <%
+                        }
+                    %>
                     </tbody>
                 </table>
             </div>

@@ -1,5 +1,16 @@
+<%@page import="com.dropbetzadmin.control.AdminArtistController"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*,com.dropbeatzadmin.model.AdminArtistModel" %>
+<%@ page import="com.dropbetzadmin.control.AdminOrderController" %>
+
+    <%
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("Signin.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +93,7 @@
                     
                     <div class="user-profile">
                         <img src="/api/placeholder/35/35" alt="Admin Profile">
-                        <span>Admin</span>
+                        <span><%= session.getAttribute("username") %></span>
                     </div>
                 </div>
             </div>
@@ -90,57 +101,60 @@
             <!-- Admin List Table -->
             <div class="table-container">
                 <div class="table-header">
+                <a href="AdminAddArtistForm.jsp" >
                     <h3>Artist Control</h3>
                     <button class="add-button">
                         <i class="fas fa-plus"></i> Add Artist
                     </button>
+                    </a>
                 </div>
                 
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                           <th>ID</th>
+                            <th>fullname</th>
                             <th>Username</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>country</th>
+                            <th>contactnumber</th>
+                            <th>email</th>
+                            <th>Password </th>
+                            <th>role </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>admin</td>
-                            <td>admin@dropbeatz.com</td>
-                            <td>Super Admin</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
+                    
+                      <%
+    List<AdminArtistModel> artistList = AdminArtistController.getAllArtist();
+%>
+      <%
+        for(AdminArtistModel artist : artistList){
+    %>
+                         <tr>
+                            <td><%= artist.getId()%></td>
+                            <td><%= artist.getFullname()%></td>
+                            <td><%= artist.getUsername()%></td>
+                            <td><%= artist.getCountry()%></td>
+                            <td><%= artist.getContactnumber()%></td>
+                            <td><%= artist.getPassword()%></td>
+                            <td><%= artist.getEmail()%></td>
+                            <td><%= artist.getRole()%></td>
+                           <td>
+                                <a href="AdminUpdateArtist.jsp?id=<%= artist.getId() %>&fullname=<%= artist.getFullname() %>&username=<%= artist.getUsername()%>&country=<%= artist.getCountry() %>&contactnumber=<%=artist.getContactnumber() %>&password=<%=artist.getPassword() %>&email=<%=artist.getEmail() %>&role=<%=artist.getRole() %>" >
+       
+            <button class="action-button edit-button">Update</button>
+            </a> 
+                                
+                               <form action="AdminDeletArtistServelet" method="post">
+    <input type="hidden" name="id" value="<%= artist.getId() %>">
+    <button class="action-button delete-button" type="submit">Delete</button>
+</form>         
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>manager</td>
-                            <td>manager@dropbeatz.com</td>
-                            <td>Content Manager</td>
-                            <td><span class="status active">Active</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>editor</td>
-                            <td>editor@dropbeatz.com</td>
-                            <td>Editor</td>
-                            <td><span class="status inactive">Inactive</span></td>
-                            <td>
-                                <button class="action-button edit-button">Edit</button>
-                                <button class="action-button delete-button">Delete</button>
-                            </td>
-                        </tr>
+                       
+                           <%
+        }
+    %>
                     </tbody>
                 </table>
             </div>

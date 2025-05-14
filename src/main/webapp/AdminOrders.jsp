@@ -1,53 +1,122 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.*, AdminOrdersPackage.AdminOrderModel" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.*, com.dropbeatzadmin.model.AdminOrderModel" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./CSS/Admin1.css">
-    <title>Admin Dashboard - Orders</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="./CSS/NewAdmin.css">
+<title>Admin Dashboard</title>
 </head>
 <body>
-    <jsp:include page="Header.jsp" />
-    <!-- WRAP everything inside .admin-container -->
-    <div class="admin-container">
- <!-- Sidebar -->
-  <nav class="sidebar">
-    <a href="AdminDashBoard.jsp"><h2>Admin Dashboard</h2></a>
- <ul>
- 	<li><a href="AdminOrders.jsp">Orders</a></li>
-    <li><a href="AdminProducts.jsp">Products</a></li>
-    <li><a href="AdminMessages.jsp">Messages</a></li>
-    <li><a href="AdminArtist.jsp">Artist Control</a></li>
-    <li><a href="AdminUser.jsp">User Control</a></li>
-    <li><a href="Admin.jsp">Admin Control</a></li>
-  </ul>
-</nav>
-        <!-- Main Content -->
-        <main class="content">
-            <h1>Orders</h1>
+
+<div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="Pictures/logo.png" alt="DropBeatz Logo">
+                <h1>Drop<span>Beatz</span></h1>
+            </div>
             
-            <% if(request.getAttribute("allOrders") != null) { %>
+            <div class="nav-section">
+                <h3>Main</h3>
+                <a href="admindashboard.jsp" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Management</h3>
+                <a href="AdminProducts.jsp" class="nav-item">
+                    <i class="fas fa-music"></i>
+                    <span>Products</span>
+                </a>
+                <a href="AdminArtists.jsp" class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Artists</span>
+                </a>
+                <a href="AdminUser.jsp" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </a>
+                <a href="AdminMessages.jsp" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>Settings</h3>
+                <a href="profile.jsp" class="nav-item">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="logout.jsp" class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2>Admin Dashboard</h2>
+                
+                <div class="user-info">
+                    <div class="search-bar">
+                        <i class="fas fa-search" style="color: #777;"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge"></span>
+                    </div>
+                    
+                    <div class="notification">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge"></span>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <img src="/api/placeholder/35/35" alt="Admin Profile">
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admin List Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Orders</h3>
+                    
+                </div>
+                <% if(request.getAttribute("allOrders") != null) { %>
+                
                 <table>
                     <thead>
                         <tr>
-                            <th>Order ID</th>
+                             <th>Order ID</th>
                             <th>Customer ID</th>
                             <th>Product ID</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${allOrders}" var="order">
-                            <tr>
-                                <td>${order.getOrder_id()}</td>
+                    <c:forEach items="${allOrders}" var="order">
+                    
+                        <tr>
+                             <td>${order.getOrder_id()}</td>
                                 <td>${order.getUser_id()}</td>
                                 <td>${order.getProduct_id()}</td>
-                              
-                            </tr>
-                        </c:forEach>
+
+                        </tr>
+                         </c:forEach>
                         
                         <c:if test="${empty allOrders}">
                             <tr>
@@ -60,12 +129,17 @@
                 <div class="message">
                     <p>Loading orders...</p>
                     <script>
-                        window.location.href = "AdminGetAllOrderServlet";
+                        window.location.href = "Admingetallorderservlet";
                     </script>
                 </div>
             <% } %>
-        </main>
+
+            
+            <footer>
+                <p>Copyright © DropBeatz 2025. All rights reserved.</p>
+            </footer>
+        </div>
     </div>
-    <jsp:include page="Footer.jsp" />
+
 </body>
 </html>
