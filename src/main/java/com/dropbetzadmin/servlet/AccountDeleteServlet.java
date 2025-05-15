@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dropbeatzadmin.model.NewUserModel;
+import com.dropbetzadmin.control.NewUserController;
+
 @WebServlet("/AccountDeleteServlet")
 public class AccountDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

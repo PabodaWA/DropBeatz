@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnection {
 	
 
-	private static String url="jdbc:mysql://localhost:3306/musicstore";
+	private static String url="jdbc:mysql://127.0.0.1:3306/dropbeatz";
 	private static String user="root";
 	private static String pass="123456";
 	private static Connection con;

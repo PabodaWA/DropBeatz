@@ -27,7 +27,7 @@ public class NewUserController {
 				stmt=con.createStatement();
 				
 				//SQL QUERY
-				String sql = "insert into user values(0,'"+fullname+"','"+username+"','"+country+"','"+contactnumber+"','"+email+"','"+password+"')";
+				String sql = "insert into users values(0,'"+fullname+"','"+username+"','"+country+"','"+contactnumber+"','"+email+"','"+password+"')";
 				int rs = stmt.executeUpdate(sql);
 				
 
@@ -52,7 +52,7 @@ public class NewUserController {
 				//DB CONNECTION CALL
 				con  = DBConnection.getConnection();
 				stmt=con.createStatement();
-				String sql = "SELECT * FROM user WHERE username='" + username + "' AND password='" + password + "'";
+				String sql = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'";
 
 				rs = stmt.executeQuery(sql);
 				
@@ -87,7 +87,7 @@ public class NewUserController {
 				stmt=con.createStatement();
 				
 				//Query
-				String sql ="select * from user where id= '"+convertedID+"' ";
+				String sql ="select * from users where id= '"+convertedID+"' ";
 				
 				rs = stmt.executeQuery(sql);
 				
@@ -124,7 +124,7 @@ public class NewUserController {
 				stmt=con.createStatement();	
 				
 				//sql Query 
-				String sql = "update user set fullname='"+fullname+"', username='"+username+"', country='"+country+"', contactnumber='"+contactnumber+"', email='"+email+"', password='"+password+"' where id='"+id+"'";
+				String sql = "update users set fullname='"+fullname+"', username='"+username+"', country='"+country+"', contactnumber='"+contactnumber+"', email='"+email+"', password='"+password+"' where id='"+id+"'";
 
 
 				
@@ -160,7 +160,7 @@ public class NewUserController {
 				
 				//Query
 				
-				String sql ="select * from user where id = '"+convertedID+"'";
+				String sql ="select * from users where id = '"+convertedID+"'";
 
 				
 				rs = stmt.executeQuery(sql);
@@ -198,7 +198,7 @@ public class NewUserController {
 		        stmt = con.createStatement();
 		        
 		        // DELETE Query
-		        String sql = "DELETE FROM user WHERE id = '" + convID + "'";
+		        String sql = "DELETE FROM users WHERE id = '" + convID + "'";
 		        
 		        int rs = stmt.executeUpdate(sql);
 		        

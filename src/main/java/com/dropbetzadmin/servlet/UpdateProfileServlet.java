@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dropbeatzadmin.model.NewUserModel;
+import com.dropbetzadmin.control.NewUserController;
+import com.dropbetzadmin.control.UserController;
+
 @WebServlet("/UpdateProfileServlet")
 public class UpdateProfileServlet extends HttpServlet {
 private static final long serialVersionUID = 1L;
@@ -34,13 +38,13 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 boolean isTrue;
 
 
-	isTrue = NewUserModel.updateprofile(id, fullname, username, country, contactnumber, email, password);
+	isTrue = NewUserController.updateprofile(id, fullname, username, country, contactnumber, email, password);
 	
 	if (isTrue == true) {
         // After successful update, update the user object in the session
-        List<UserModel> userDetails = UserController.getById(id);
+        List<NewUserModel> userDetails = NewUserController.getById(id);
         if (userDetails.size() > 0) {
-            UserModel updatedUser = userDetails.get(0);
+            NewUserModel updatedUser = userDetails.get(0);
             request.getSession().setAttribute("user", updatedUser);  // Update session attribute
 
             String alertMessage = "Data update Successful";

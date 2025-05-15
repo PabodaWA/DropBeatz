@@ -76,6 +76,8 @@ public class NewUserModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 	
 
 }
