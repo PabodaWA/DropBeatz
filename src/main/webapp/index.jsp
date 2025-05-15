@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DropBeatZ</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="./CSS/index.css">
 
     
-    <link rel="preload" href="/img/hdp1.jpg" as="image">
-    <link rel="preload" href="/img/mn2.jpg" as="image">
-    <link rel="preload" href="/img/hifi.webp" as="image">
-    <link rel="preload" href="/img/hifi2.png" as="image">  
+    <link rel="preload" href="./Pictures/hdp1.jpg" as="image">
+    <link rel="preload" href="./Pictures/mn2.jpg" as="image">
+    <link rel="preload" href="./Pictures/hifi.webp" as="image">
+    <link rel="preload" href="./Pictures/hifi2.png" as="image">  
 </head>
 <body>
     <div class="container">
@@ -20,12 +20,12 @@
         <nav>
             <a href="#"><b>Drop</b>BeatZ</a>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.jsp">Home</a></li>
                 <li><a href="#">Songs</a></li>
                 <li><a href="#">Albums</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-            <a href="#" class="login"><i class="uil uil-user"></i>Login</a>
+            <a href="Signin.jsp" class="login"><i class="uil uil-user"></i>Login</a>
         </nav>
         <div class="content-box">
             <div>

@@ -23,7 +23,7 @@
 
 <div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
+  <div class="sidebar">
             <div class="logo">
                 <img src="Pictures/logo.png" alt="DropBeatz Logo">
                 <h1>Drop<span>Beatz</span></h1>
@@ -31,7 +31,7 @@
             
             <div class="nav-section">
                 <h3>Main</h3>
-                <a href="admindashboard.jsp" class="nav-item active">
+                <a href="admindashboardjsp.jsp" class="nav-item ">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
@@ -39,31 +39,23 @@
             
             <div class="nav-section">
                 <h3>Management</h3>
-                <a href="AdminProducts.jsp" class="nav-item">
-                    <i class="fas fa-music"></i>
-                    <span>Products</span>
-                </a>
-                <a href="AdminArtists.jsp" class="nav-item">
+               
+                
+                
+                
+                <a href="AdminArtist.jsp" class="nav-item active">
                     <i class="fas fa-user-friends"></i>
                     <span>Artists</span>
                 </a>
-                <a href="AdminUser.jsp" class="nav-item">
-                    <i class="fas fa-users"></i>
-                    <span>Users</span>
-                </a>
-                <a href="AdminMessages.jsp" class="nav-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Messages</span>
-                </a>
+               
+              
             </div>
+            
             <div class="nav-section">
-                <h3>Settings</h3>
-                <a href="profile.jsp" class="nav-item">
-                    <i class="fas fa-user-cog"></i>
-                    <span>Profile</span>
-                </a>
+                
+                
 
-                <a href="logout.jsp" class="nav-item">
+                <a href="adminlogout.jsp" class="nav-item">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -80,23 +72,15 @@
                         <i class="fas fa-search" style="color: #777;"></i>
                         <input type="text" placeholder="Search...">
                     </div>
-                    
-                    <div class="notification">
-                        <i class="fas fa-bell"></i>
-                        <span class="badge"></span>
-                    </div>
-                    
-                    <div class="notification">
-                        <i class="fas fa-envelope"></i>
-                        <span class="badge"></span>
-                    </div>
-                    
+            
                     <div class="user-profile">
                         <img src="/api/placeholder/35/35" alt="Admin Profile">
                         <span><%= session.getAttribute("username") %></span>
                     </div>
                 </div>
             </div>
+            
+       
             
             <!-- Admin List Table -->
             <div class="table-container">
