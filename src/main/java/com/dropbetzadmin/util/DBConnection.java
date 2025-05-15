@@ -21,8 +21,4 @@ public static Connection getConnection() {
 	}
 	return con;
 }
-		
-	
-	
-
 }

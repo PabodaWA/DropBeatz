@@ -1,18 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Packages - DropBeatZ</title>
-    <link rel="stylesheet" href="css/packages.css">
+    <link rel="stylesheet" href="CSS/packages.css">
 </head>
 <body>
-    <!-- Dynamic Background -->
     <div class="berth"></div>
-
-    <!-- Navigation Bar -->
     <nav>
         <a href="index.html"><b>Drop</b>BeatZ</a>
         <ul>
@@ -20,17 +16,15 @@
             <li><a href="songs.html">Songs</a></li>
             <li><a href="albums.html">Albums</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="packages" class="active">Packages</a></li>
+            <li><a href="managerPackages" class="active">Packages</a></li>
         </ul>
         <a href="logout" class="login">Logout</a>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
         <div class="card">
             <h2 class="text-center">Manage Packages</h2>
 
-            <!-- Success/Error Messages -->
             <c:if test="${not empty message}">
                 <div class="alert alert-success">
                     <h5>${message}</h5>
@@ -42,10 +36,8 @@
                 </div>
             </c:if>
 
-            <!-- Add Package Button -->
             <button class="btn btn-primary" onclick="openModal('addPackageModal')">Add New Package</button>
 
-            <!-- Packages Table -->
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -69,9 +61,8 @@
                                             onclick="setEditModal(${pkg.id}, '${pkg.name.replace("'", "\\'")}', ${pkg.price}, ${pkg.discount}); openModal('editPackageModal')">
                                         Edit
                                     </button>
-                                    <form action="packages" method="post" style="display:inline;" 
+                                    <form action="managerDeletePackage" method="post" style="display:inline;" 
                                           onsubmit="return confirm('Are you sure you want to delete package ${pkg.name.replace("'", "\\'")}?');">
-                                        <input type="hidden" name="action" value="delete">
                                         <input type="hidden" name="id" value="${pkg.id}">
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
@@ -84,16 +75,14 @@
         </div>
     </div>
 
-    <!-- Add Package Modal -->
     <div class="modal" id="addPackageModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Add Package</h5>
-                <button class="btn-close" onclick="closeModal('addPackageModal')">&times;</button>
+                <button class="btn-close" onclick="closeModal('addPackageModal')">×</button>
             </div>
-            <form action="packages" method="post" class="needs-validation" onsubmit="return validateForm(this)">
+            <form action="managerInsertPackage" method="post" class="needs-validation" onsubmit="return validateForm(this)">
                 <div class="modal-body">
-                    <input type="hidden" name="action" value="create">
                     <div class="form-group">
                         <label for="addName">Name</label>
                         <input type="text" class="form-control" id="addName" name="name" required>
@@ -118,16 +107,14 @@
         </div>
     </div>
 
-    <!-- Edit Package Modal -->
     <div class="modal" id="editPackageModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Edit Package</h5>
-                <button class="btn-close" onclick="closeModal('editPackageModal')">&times;</button>
+                <button class="btn-close" onclick="closeModal('editPackageModal')">×</button>
             </div>
-            <form action="packages" method="post" class="needs-validation" onsubmit="return validateForm(this)">
+            <form action="managerUpdatePackage" method="post" class="needs-validation" onsubmit="return validateForm(this)">
                 <div class="modal-body">
-                    <input type="hidden" name="action" value="update">
                     <input type="hidden" name="id" id="editId">
                     <div class="form-group">
                         <label for="editName">Name</label>
@@ -154,7 +141,6 @@
     </div>
 
     <script>
-        // Modal control
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('show');
         }
@@ -163,7 +149,6 @@
             document.getElementById(modalId).classList.remove('show');
         }
 
-        // Form validation
         function validateForm(form) {
             let isValid = true;
             const inputs = form.querySelectorAll('input[required]');
@@ -189,7 +174,6 @@
             return isValid;
         }
 
-        // Set edit modal values
         function setEditModal(id, name, price, discount) {
             document.getElementById('editId').value = id;
             document.getElementById('editName').value = name;
