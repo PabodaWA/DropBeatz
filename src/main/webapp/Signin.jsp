@@ -13,7 +13,7 @@
 <body>
 
 <c:if test="${not empty errorMessage}">
-    <div style="color: red; text-align: center;">${errorMessage}</div>
+    <div style="color: blue; text-align: center;">${errorMessage}</div>
 </c:if>
 
  <div class="container">
