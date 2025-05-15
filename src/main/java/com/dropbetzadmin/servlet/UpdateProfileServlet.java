@@ -34,7 +34,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 boolean isTrue;
 
 
-	isTrue = UserController.updateprofile(id, fullname, username, country, contactnumber, email, password);
+	isTrue = NewUserModel.updateprofile(id, fullname, username, country, contactnumber, email, password);
 	
 	if (isTrue == true) {
         // After successful update, update the user object in the session

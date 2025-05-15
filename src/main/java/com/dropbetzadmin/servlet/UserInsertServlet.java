@@ -5,6 +5,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+import com.dropbeatzadmin.model.NewUserModel;
+
 @WebServlet("/UserInsertServlet")
 public class UserInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,7 +23,7 @@ public class UserInsertServlet extends HttpServlet {
 	
 		
 		
-		boolean isTrue = UserController.insertdata(fullname, username, country, contactnumber, email, password);
+		boolean isTrue = NewUserModel.insertdata(fullname, username, country, contactnumber, email, password);
 
 		
 		if (isTrue == true) {

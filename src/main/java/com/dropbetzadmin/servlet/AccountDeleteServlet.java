@@ -23,7 +23,7 @@ public class AccountDeleteServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		
 		Boolean isTrue;
-		isTrue = UserController.deleteAccount(id);
+		isTrue = NewUserController.deleteAccount(id);
 		if(isTrue == true) {
 			String alterMessage = "Account Delete Successful";
 			
@@ -31,7 +31,7 @@ public class AccountDeleteServlet extends HttpServlet {
 
 		}
 		else {
-			List<UserModel> userDetails = UserController.getById(id);
+			List<NewUserModel> userDetails = NewUserController.getById(id);
 			request.setAttribute("userDetails", userDetails);
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("wrong.jsp");

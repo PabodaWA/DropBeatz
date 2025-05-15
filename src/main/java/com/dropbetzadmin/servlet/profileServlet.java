@@ -1,4 +1,4 @@
-package UserPackage;
+package com.dropbetzadmin.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 }
 private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // Retrieve user information from session
-    UserModel user = (UserModel) request.getSession().getAttribute("user");
+	NewUserModel user = (NewUserModel) request.getSession().getAttribute("user");
     
 
     if (user != null) {
