@@ -61,7 +61,7 @@
                                             onclick="setEditModal(${pkg.id}, '${pkg.name.replace("'", "\\'")}', ${pkg.price}, ${pkg.discount}); openModal('editPackageModal')">
                                         Edit
                                     </button>
-                                    <form action="managerDeletePackage" method="post" style="display:inline;" 
+                                    <form action="ManagerDeletePackage" method="post" style="display:inline;" 
                                           onsubmit="return confirm('Are you sure you want to delete package ${pkg.name.replace("'", "\\'")}?');">
                                         <input type="hidden" name="id" value="${pkg.id}">
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -81,7 +81,7 @@
                 <h5 class="modal-title">Add Package</h5>
                 <button class="btn-close" onclick="closeModal('addPackageModal')">×</button>
             </div>
-            <form action="managerInsertPackage" method="post" class="needs-validation" onsubmit="return validateForm(this)">
+            <form action="ManagerInsertPackage" method="post" class="needs-validation" onsubmit="return validateForm(this)">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="addName">Name</label>

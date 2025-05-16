@@ -43,8 +43,7 @@
       
 
       <label for="password">Password :</label>
-      <input type="text"  name="password " value=<%= password %> required>
-
+     <input type="text" name="password" value="<%= password %>" required>
 
 <label for="role">role:</label>
       <input type="text" id="productDesc" name="role" value=<%= role%> readonly>
