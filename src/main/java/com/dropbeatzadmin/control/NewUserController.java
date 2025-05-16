@@ -1,4 +1,4 @@
-package com.dropbetzadmin.control;
+package com.dropbeatzadmin.control;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -271,6 +271,4 @@ public class NewUserController {
             e.printStackTrace();
         }
     }
-
-	
 }

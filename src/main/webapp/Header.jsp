@@ -66,9 +66,11 @@
 
   <!-- Right Sign In -->
   <div class="signin-button">
-    <form action="signin" method="post">
-      <button type="submit">Sign In</button>
-    </form>
+    <div class="logo">
+                        <img src="./Pictures/th.jpeg" alt="Admin Profile" >
+                        </div>
+                        <span><%= session.getAttribute("username") %></span>
+                  
   </div>
 </header>
 

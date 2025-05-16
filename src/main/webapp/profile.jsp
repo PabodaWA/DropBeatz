@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="CSS/up15.css">
 </head>
 <body>
+
 <jsp:include page="Header.jsp" />
+
 <div class="user-profile">
 <h1>User Profile</h1>
 	<!--<p><strong>ID:</strong> ${user.id}</p>

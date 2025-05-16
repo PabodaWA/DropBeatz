@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <link rel="stylesheet" href="./CSS/SignIn4.css">
+ <link rel="stylesheet" href="./CSS/SignIn5.css">
  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <title>Sign In</title>
 </head>
@@ -50,7 +50,7 @@
                     <button type="submit" class="login-btn">Log in</button>
                     
                     <div class="register-link">
-                        Don't have an account? <a href="#">Register</a>
+                        Don't have an account? <a href="Register.jsp">Register</a>
                     </div>
                 </form>
                 
@@ -59,9 +59,7 @@
                 </div>
             </div>
             
-            <div class="banner-image">
-                <!-- Image will be added via CSS -->
-            </div>
+            
         </div>
     </div>
    

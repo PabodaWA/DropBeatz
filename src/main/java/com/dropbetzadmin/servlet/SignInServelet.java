@@ -48,7 +48,7 @@ public class SignInServelet extends HttpServlet {
                     RequestDispatcher dis = request.getRequestDispatcher("ArtistDashBoard.jsp");
                     dis.forward(request, response);
                 } else {
-                    RequestDispatcher dis = request.getRequestDispatcher("Home.jsp");
+                    RequestDispatcher dis = request.getRequestDispatcher("profile.jsp");
                     dis.forward(request, response);
                 }
             }
