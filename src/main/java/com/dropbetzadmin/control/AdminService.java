@@ -2,6 +2,8 @@ package com.dropbetzadmin.control;
 
 //interfaces
 
+//abstraction used
+
 import com.dropbeatzadmin.model.AdminModel;
 import java.util.List;
 public interface AdminService {

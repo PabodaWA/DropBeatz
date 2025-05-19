@@ -1,0 +1,118 @@
+/* CSS/login2.css */
+
+body {
+    font-family: sans-serif;
+    margin: 0; /* Ensure no default body margin */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use full viewport height initially */
+    background-image: url('../image/login.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    padding-top: 65px;  /* Approximate height of your header */
+    padding-bottom: 150px; /* Approximate height of your footer */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+    width: 350px; /* Adjust width as needed */
+    max-width: 90%;
+    color: white;
+}
+
+
+.form-box header {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #F0E68C;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-bottom: 2px solid #F0E68C;
+  padding-bottom: 10px;
+   background-color: transparent; 
+}
+
+
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eee;
+    font-size: 16px;
+}
+
+.field.input input[type="text"],
+.field.input input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #333; /* Dark input background */
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.field input.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #FFC107; /* Gold/Amber button */
+    color: #222; /* Dark button text */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.field input.btn:hover {
+    background-color: #FFCA28; /* Slightly lighter gold on hover */
+}/* CSS/footer.css */
+/* ... other footer styles ... */
+
+.footer-end {
+    /* ... other styles ... */
+    color: #aaa; /* This should make the copyright text light gray */
+}
+
+.copyright-tag {
+    color: #aaa; /* This is another selector that might target the copyright text */
+    font-size: 0.9em;
+}
+
+.bold-text {
+    font-weight: bold;
+    color: #ddd; /* This might style "DropBeatsZ" if it's wrapped in a <span> with this class */
+}
+
+.link a {
+  /* Styles specifically for the anchor (<a>) element */
+  /* For example: */
+  color: rgb(255, 0, 0);
+  text-decoration: none; /* Remove underline */
+}
+
+.link a:hover {
+  /* Styles to apply when the mouse hovers over the link */
+  /* For example: */
+  text-decoration: underline;
+  color: rgb(255, 0, 0);
+}
+
+/* ... other footer styles ... */
+/* CSS/footer.css */

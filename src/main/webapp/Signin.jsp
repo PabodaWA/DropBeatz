@@ -16,7 +16,7 @@
     <div style="color: blue; text-align: center;">${errorMessage}</div>
 </c:if>
 
- <div class="container">
+ <div class="container">	
         <div class="login-card">
             <div class="login-content">
                 <div class="logo">
@@ -55,7 +55,7 @@
                 </form>
                 
                 <div class="footer-links">
-                    <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                    <a href="t&c.jsp">Terms of Use</a> | <a href="#">Privacy Policy</a>
                 </div>
             </div>
             

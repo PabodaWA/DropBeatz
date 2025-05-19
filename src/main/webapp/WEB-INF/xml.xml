@@ -42,7 +42,7 @@
      <!-- user System -->
      <servlet>
      	<servlet-name>UserInsertServlet</servlet-name>
-     	<servlet-class>/UserPackage.UserInsertServlet</servlet-class>
+     	<servlet-class>/com.dropbeatzuser.servlet.UserInsertServlet</servlet-class>
      </servlet>
      
      <servlet-mapping>
@@ -52,7 +52,7 @@
      
      <servlet>
      	<servlet-name>profileServlet</servlet-name>
-     	<servlet-class>/UserPackage.profileServlet</servlet-class>
+     	<servlet-class>/com.dropbeatzuser.servlet.profileServlet</servlet-class>
      </servlet>
      
      <servlet-mapping>
@@ -62,7 +62,7 @@
      
      <servlet>
      	<servlet-name>LoginServlet</servlet-name>
-     	<servlet-class>/UserPackage.LoginServlet</servlet-class>
+     	<servlet-class>/com.dropbeatzuser.servlet.LoginServlet</servlet-class>
      </servlet>
      
      <servlet-mapping>
@@ -72,7 +72,7 @@
      
      <servlet>
      	<servlet-name>UpdateProfileServlet</servlet-name>
-     	<servlet-class>/UserPackage.UpdateProfileServlet</servlet-class>
+     	<servlet-class>/com.dropbeatzuser.servlet.UpdateProfileServlet</servlet-class>
      </servlet>
      
      <servlet-mapping>
@@ -82,7 +82,7 @@
      
      <servlet>
      	<servlet-name>AccountDeleteServlet</servlet-name>
-     	<servlet-class>/UserPackage.AccountDeleteServlet</servlet-class>
+     	<servlet-class>/com.dropbeatzuser.servlet.AccountDeleteServlet</servlet-class>
      </servlet>
      
      <servlet-mapping>

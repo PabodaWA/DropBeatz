@@ -62,17 +62,18 @@
         </div>
         
         <!-- Main Content -->
-        <div class="main-content">
+       <div class="main-content">
             <div class="header">
                 <h2>Admin Dashboard</h2>
                 
-               
-                    
-                    
-      
-                    
+                <div class="user-info">
+                    <div class="search-bar">
+                        <i class="fas fa-search" style="color: #777;"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+            
                     <div class="user-profile">
-                        <img src="/th.jsp" alt="Admin Profile">
+                        
                         <span><%= session.getAttribute("username") %></span>
                     </div>
                 </div>

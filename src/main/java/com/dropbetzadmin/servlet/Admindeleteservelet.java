@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.dropbetzadmin.control.AdminController;
 import com.dropbeatzadmin.model.AdminModel;
 
+//inheritence used
+
 @WebServlet("/Admindeleteservelet")
 public class Admindeleteservelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

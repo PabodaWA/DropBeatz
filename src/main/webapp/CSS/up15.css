@@ -1,0 +1,173 @@
+/* Global body with background image */
+
+body {
+
+margin: 0;
+
+padding: 0;
+
+background-image: url('../image/uprofile.jpg'); /* ✅ Update the path if needed */
+
+background-size: cover;
+
+background-repeat: no-repeat;
+
+background-position: center;
+
+font-family: 'Nunito', sans-serif;
+
+}
+
+
+
+/* User Profile Container */
+
+.user-profile {
+
+background-color: #1d1b08;
+
+width: 60%;
+
+margin: 60px auto;
+
+padding: 40px;
+
+border-radius: 12px;
+
+box-shadow:  0 6px 20px rgb(192, 192, 192);
+
+}
+
+
+
+/* Heading */
+
+.user-profile h1 {
+
+text-align: center;
+
+color:#F0E68C;
+
+margin-bottom: 30px;
+
+font-size: 32px;
+
+font-weight: bold;
+
+border-bottom: 2px solid #ccc;
+
+padding-bottom: 10px;
+
+}
+
+
+
+/* Profile Data Table */
+
+.profile-table {
+
+width: 100%;
+
+border-collapse: collapse;
+
+margin-bottom: 30px;
+
+}
+
+
+.profile-table th,
+.profile-table td {
+    text-align: left;
+    padding: 14px 18px;
+    border-bottom: 1px solid #ddd;
+    font-size: 19px;
+    color: white; /* This line is now white */
+}
+
+
+
+.profile-table th {
+
+width: 30%;
+
+background-color:#641e16;/*chhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+
+font-weight: 700;
+
+}
+
+
+
+/* Action Buttons Container */
+
+.user-buttons {
+
+display: flex;
+
+justify-content: space-between;
+
+}
+
+
+
+/* Buttons (Shared) */
+
+.user-buttons a button,
+
+.user-buttons form button {
+
+padding: 10px 24px;
+
+font-size: 16px;
+
+font-weight: 600;
+
+border: none;
+
+border-radius: 8px;
+
+cursor: pointer;
+
+transition: background-color 0.3s ease;
+
+}
+
+
+
+/* Update Button */
+
+.user-buttons a button {
+
+background-color: #d4ac0d;
+
+color:#300404;
+
+}
+
+
+
+.user-buttons a button:hover {
+
+background-color: #0056b3;
+
+}
+
+
+
+/* Delete Button */
+
+.user-buttons form button {
+
+background-color: #c0392b ;
+
+color:#decaca;
+
+}
+
+
+
+.user-buttons form button:hover {
+
+background-color: #a71d2a;
+
+}

@@ -5,23 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="CSS/Regi.css">
 </head>
 <body>
-<jsp:include page="Header.jsp" />
-
 	    <div class="container">
         <div class="box form-box">
 
  <header>Sign Up</header>
-
-            <form action="UserInsertServlet" method="post">
+            <form action="InsertServlet" method="post">
                 <div class="field input">
                     <label for="fullname">Full Name</label>
                     <input type="text" name="fullname" id="fullname" autocapitalize="off" required>
                 </div>
                 <div class="field input">
-                    <label for="username">User name</label>
+                    <label for="username">Username</label>
                     <input type="text" name="username" id="username" autocapitalize="off" required>
                 </div>
                 <div class="field input">
@@ -41,14 +37,12 @@
                         <input type="password" name="password" id="password" autocapitalize="off" required>
                 </div>
                 <div class="field">
-                    <input type="submit" class="btn" style="background-color: #8B4513;" name="submit" value="Register" required>
+                    <input type="submit" class="btn" name="submit" value="Register" required>
                 </div>
                 
             </form>
         </div>
         
     </div>
-<jsp:include page="Footer.jsp" />
-
 </body>
 </html>

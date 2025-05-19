@@ -32,13 +32,13 @@ public class AdminController implements AdminService {
                 return false;
             }
             
-            // Print debug information
+            
             System.out.println("Inserting admin with username: " + username);
             
-            // Begin transaction
+            
             con.setAutoCommit(false);
             
-            // Prepare the SQL statement with proper parameterization
+            
             String sql = "INSERT INTO user (fullname, username, country, contactnumber, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
             stmt = con.prepareStatement(sql);
             
@@ -51,10 +51,10 @@ public class AdminController implements AdminService {
             stmt.setString(6, password);
             stmt.setString(7, role);
             
-            // Execute the statement
+           
             int result = stmt.executeUpdate();
             
-            // Check if insertion was successful
+            // Check 
             if (result > 0) {
                 System.out.println("Admin insertion successful: " + result + " row(s) affected");
                 isSuccess = true;
@@ -64,7 +64,7 @@ public class AdminController implements AdminService {
                 con.rollback();
             }
         } catch (SQLException e) {
-            // Handle SQL exceptions
+           
             try {
                 if (con != null) con.rollback();
             } catch (SQLException ex) {
@@ -73,7 +73,7 @@ public class AdminController implements AdminService {
             System.out.println("SQL Error in insertData: " + e.getMessage());
             e.printStackTrace();
         } catch (Exception e) {
-            // Handle other exceptions
+            
             try {
                 if (con != null) con.rollback();
             } catch (SQLException ex) {
@@ -82,7 +82,7 @@ public class AdminController implements AdminService {
             System.out.println("Error in insertData: " + e.getMessage());
             e.printStackTrace();
         } finally {
-            // Close resources
+           
             try {
                 if (stmt != null) stmt.close();
                 if (con != null) {
@@ -97,6 +97,8 @@ public class AdminController implements AdminService {
         
         return isSuccess;
     }
+    
+    
 
     @Override
     public List<AdminModel> getById(String id) {
@@ -208,10 +210,10 @@ public class AdminController implements AdminService {
             
             System.out.println("Updating admin with ID: " + id);
             
-            // Begin transaction
+            
             con.setAutoCommit(false);
             
-            // Use PreparedStatement to prevent SQL injection
+            
             String sql = "UPDATE user SET fullname = ?, username = ?, country = ?, contactnumber = ?, email = ?, password = ? WHERE id = ?";
             stmt = con.prepareStatement(sql);
             
@@ -280,10 +282,10 @@ public class AdminController implements AdminService {
             
             System.out.println("Deleting admin with ID: " + id);
             
-            // Begin transaction
+            
             con.setAutoCommit(false);
             
-            // Use PreparedStatement to prevent SQL injection
+           
             String sql = "DELETE FROM user WHERE id = ?";
             stmt = con.prepareStatement(sql);
             stmt.setString(1, id);

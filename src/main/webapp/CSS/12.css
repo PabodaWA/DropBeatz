@@ -1,0 +1,86 @@
+/* Import custom font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    background-color: #000; /* Sets the background color of the entire page to black */
+}
+
+/* Container */
+.form-container {
+    width: 50%; /* Kept original width */
+    margin: 60px auto;
+    background-color: #222; /* Dark background color */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(255, 99, 71, 0.2); /* Darker shadow */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee; /* Light text color */
+
+    /* Add background image here */
+    background-image: url('../image/update.jpg'); /* Replace 'your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Adjust as needed: cover, contain, auto, etc. */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: center; /* Position the image in the center */
+}
+
+/* Heading */
+.form-container h1 {
+    text-align: left;
+    padding-left: 0; /* Adjusted padding */
+    margin-bottom: 30px;
+    color:#f39c12; /* Goldenrod heading color */
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    border-bottom: 2px solid #F0E68C; /* Goldenrod bottom border */
+    padding-bottom: 10px;
+    background-color: rgba(34, 34, 34, 0.8); /* Optional: Add a semi-transparent background to the heading for better readability */
+    padding: 10px; /* Add some padding around the heading text */
+    border-radius: 5px; /* Optional: Add some rounding to the heading background */
+}
+
+/* Input fields */
+.field.input {
+    margin-bottom: 20px; /* Kept original margin */
+}
+
+.field.input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold; /* Slightly less bold */
+    color: #fadbd8; /* Light label color */
+}
+
+.field.input input {
+    width: 100%;
+    padding: 10px; /* Kept original padding */
+    font-size: 16px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #444; /* Dark input background */
+    color: #eee; /* Light input text color */
+}
+
+.field.input input::placeholder {
+    color: #aaa; /* Light placeholder text */
+}
+
+/* Submit Button */
+.field input.btn {
+    width: 100%;
+    padding: 12px; /* Kept original padding */
+    font-size: 16px;
+    background-color:#c0392b ;  /* Kept original font size */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for the button text */
+    font-weight: 700;
+}
+
+.field input.btn:hover {
+    background-color: #6b8e23; /* OliveDrab hover color */
+}

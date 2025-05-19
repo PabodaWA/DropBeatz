@@ -18,7 +18,7 @@ import com.dropbeatzadmin.model.AdminModel;
 public class AdminGetAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+//Polymorphism used
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

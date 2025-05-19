@@ -2,6 +2,8 @@ package com.dropbeatzadmin.model;
 
 public class AdminModel {
 	
+	//Access Modifiers 
+	
 	private String id;
 	private String fullname;
 	private String username;

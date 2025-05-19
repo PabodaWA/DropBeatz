@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.*,com.dropbeatzadmin.model.AdminArtistModel" %>
-<%@ page import="com.dropbetzadmin.control.AdminOrderController" %>
+<%@ page import="com.dropbetzadmin.control.AdminArtistController" %>
 
     <%
     if (session.getAttribute("username") == null) {
@@ -74,7 +74,7 @@
                     </div>
             
                     <div class="user-profile">
-                        <img src="/api/placeholder/35/35" alt="Admin Profile">
+                        
                         <span><%= session.getAttribute("username") %></span>
                     </div>
                 </div>
