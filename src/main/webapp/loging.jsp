@@ -28,6 +28,9 @@
                  <div class="link">
                     Don't have an account? <a href="Register.jsp">Sing Up</a>
                 </div> 
+                <div class="link">
+                    Are you an Admin Or an Artist ? <a href="Signin.jsp">Sing In</a>
+                </div>
             </form>
         </div>
     </div>
