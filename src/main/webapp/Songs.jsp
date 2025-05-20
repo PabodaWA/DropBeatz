@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs - DropBeatZ</title>
-    <link rel="stylesheet" href="CSS/songs.css">
+    <link rel="stylesheet" href="./CSS/Songs.css">
 </head>
 <body>
     <div class="container">
@@ -17,7 +17,7 @@
                 <li><a href="#">Albums</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-            <a href="#" class="login"><i class="uil uil-user"></i>Login</a>
+            <a href="profile.jsp" class="login"><i class="uil uil-user"></i>Profile</a>
         </nav>
         <div class="content-box">
             <!-- Empty content-box for spacing -->
