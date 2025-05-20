@@ -39,7 +39,7 @@ public class AdminController implements AdminService {
             con.setAutoCommit(false);
             
             
-            String sql = "INSERT INTO user (fullname, username, country, contactnumber, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (fullname, username, country, contactnumber, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
             stmt = con.prepareStatement(sql);
             
             // Set parameters
@@ -115,7 +115,7 @@ public class AdminController implements AdminService {
             }
             
             // Use PreparedStatement to prevent SQL injection
-            String sql = "SELECT * FROM user WHERE id = ? AND role = 'admin'";
+            String sql = "SELECT * FROM users WHERE id = ? AND role = 'admin'";
             stmt = con.prepareStatement(sql);
             stmt.setString(1, id);
             
@@ -164,7 +164,7 @@ public class AdminController implements AdminService {
             }
             
             // Use PreparedStatement for consistency
-            String sql = "SELECT * FROM user WHERE role = ?";
+            String sql = "SELECT * FROM users WHERE role = ?";
             stmt = con.prepareStatement(sql);
             stmt.setString(1, "admin");
             
@@ -214,7 +214,7 @@ public class AdminController implements AdminService {
             con.setAutoCommit(false);
             
             
-            String sql = "UPDATE user SET fullname = ?, username = ?, country = ?, contactnumber = ?, email = ?, password = ? WHERE id = ?";
+            String sql = "UPDATE users SET fullname = ?, username = ?, country = ?, contactnumber = ?, email = ?, password = ? WHERE id = ?";
             stmt = con.prepareStatement(sql);
             
             stmt.setString(1, fullname);
@@ -286,7 +286,7 @@ public class AdminController implements AdminService {
             con.setAutoCommit(false);
             
            
-            String sql = "DELETE FROM user WHERE id = ?";
+            String sql = "DELETE FROM users WHERE id = ?";
             stmt = con.prepareStatement(sql);
             stmt.setString(1, id);
             
@@ -347,7 +347,7 @@ public class AdminController implements AdminService {
             }
             
             // Use PreparedStatement to prevent SQL injection
-            String sql = "SELECT COUNT(*) FROM user WHERE username = ?";
+            String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
             stmt = con.prepareStatement(sql);
             stmt.setString(1, username);
             

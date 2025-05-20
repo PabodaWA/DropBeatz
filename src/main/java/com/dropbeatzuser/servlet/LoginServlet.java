@@ -29,7 +29,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		if (userloging != null && !userloging.isEmpty()) {
 		   
 		    request.getSession().setAttribute("user", userloging.get(0));
-		    response.sendRedirect("profileServlet");
+		    response.sendRedirect("Songs.jsp");
 		    
 		} else {
 		    String alertMessage = "Invalid Credentials, please try again";

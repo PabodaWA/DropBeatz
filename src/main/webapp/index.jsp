@@ -28,7 +28,7 @@
                 <!--  <li><a href="#">About</a></li>-->
                 <li><a href="packages.jsp">Packages</a></li>                
             </ul>
-            <a href="Signin.jsp" class="login"><i class="uil uil-user"></i>Login</a>
+            <a href="loging.jsp" class="login"><i class="uil uil-user"></i>Login</a>
         </nav>
         <div class="content-box">
             <div>

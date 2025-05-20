@@ -35,7 +35,7 @@ public class AdminArtistController {
 	            }
 	            
 	            // Create SQL query with parameterized statement to prevent SQL injection
-	            String sql = "INSERT INTO user (fullname, username, country, contactnumber, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	            String sql = "INSERT INTO users (fullname, username, country, contactnumber, email, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	            
 	            pstmt = con.prepareStatement(sql);
 	            pstmt.setString(1, fullname);
@@ -88,7 +88,7 @@ public class AdminArtistController {
 	            con = DBConnection.getConnection();
 	            
 	            // Query with PreparedStatement
-	            String sql = "SELECT * FROM user WHERE id = ?";
+	            String sql = "SELECT * FROM users WHERE id = ?";
 	            pstmt = con.prepareStatement(sql);
 	            pstmt.setString(1, id);
 	            
@@ -135,7 +135,7 @@ public class AdminArtistController {
 	            con = DBConnection.getConnection();
 	            
 	            // Query with PreparedStatement
-	            String sql = "SELECT * FROM user WHERE role = ?";
+	            String sql = "SELECT * FROM users WHERE role = ?";
 	            pstmt = con.prepareStatement(sql);
 	            pstmt.setString(1, "artist");
 	            
@@ -180,7 +180,7 @@ public class AdminArtistController {
 		        con = DBConnection.getConnection();
 		        
 		        // SQL Query with PreparedStatement
-		        String sql = "UPDATE user SET fullname=?, username=?, country=?, contactnumber=?, password=?, email=?, role=? WHERE id=?";
+		        String sql = "UPDATE users SET fullname=?, username=?, country=?, contactnumber=?, password=?, email=?, role=? WHERE id=?";
 		        
 		        pstmt = con.prepareStatement(sql);
 		        pstmt.setString(1, fullname);
@@ -224,7 +224,7 @@ public class AdminArtistController {
 
 		    try {
 		        con = DBConnection.getConnection();
-		        String sql = "SELECT * FROM user WHERE username = ?";
+		        String sql = "SELECT * FROM users WHERE username = ?";
 		        pstmt = con.prepareStatement(sql);
 		        pstmt.setString(1, username);
 		        rs = pstmt.executeQuery();
@@ -258,7 +258,7 @@ public class AdminArtistController {
 		        // DBConnection
 		        con = DBConnection.getConnection();
 		        
-		        String sql = "DELETE FROM user WHERE id = ?";
+		        String sql = "DELETE FROM users WHERE id = ?";
 		        pstmt = con.prepareStatement(sql);
 		        pstmt.setString(1, id);
 		        

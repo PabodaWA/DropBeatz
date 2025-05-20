@@ -21,7 +21,7 @@ public class UserController {
         try {
             con = DBConnection.getConnection();
             stmt = con.createStatement();
-            String sql = "SELECT * FROM user";
+            String sql = "SELECT * FROM users";
             rs = stmt.executeQuery(sql);
             
             while (rs.next()) {
@@ -56,14 +56,14 @@ public class UserController {
             String sql;
             if (password != null) {
                 // For login validation with PreparedStatement (more secure)
-                sql = "SELECT * FROM user WHERE username = ? AND password = ?";
+                sql = "SELECT * FROM users WHERE username = ? AND password = ?";
                 PreparedStatement pstmt = con.prepareStatement(sql);
                 pstmt.setString(1, username);
                 pstmt.setString(2, password);
                 rs = pstmt.executeQuery();
             } else {
                 // For profile retrieval only (without password check)
-                sql = "SELECT * FROM user WHERE username = ?";
+                sql = "SELECT * FROM users WHERE username = ?";
                 PreparedStatement pstmt = con.prepareStatement(sql);
                 pstmt.setString(1, username);
                 rs = pstmt.executeQuery();
@@ -99,7 +99,7 @@ public class UserController {
             // DB connection
             con = DBConnection.getConnection();
             // Use PreparedStatement to prevent SQL injection
-            String sql = "UPDATE user SET fullname = ?, country = ?, contactnumber = ?, email = ? WHERE username = ?";
+            String sql = "UPDATE users SET fullname = ?, country = ?, contactnumber = ?, email = ? WHERE username = ?";
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, fullname);
             pstmt.setString(2, country);
